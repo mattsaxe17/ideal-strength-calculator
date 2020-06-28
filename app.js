@@ -1,5 +1,6 @@
 var express = require('express'),
-    app = express();
+    app = express(),
+    PORT = process.env.PORT || 3000;
 
 /*-----
 routing
@@ -17,6 +18,6 @@ app.use(express.static('public'));
 /*-----
 port configuration
 -----*/
-app.listen(3000, () => {
+app.listen(PORT, () => {
     console.log('Server is running.');
 });
