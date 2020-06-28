@@ -1,0 +1,352 @@
+/*----------------------------------------------------------------------------
+----- global root variables -----
+----------------------------------------------------------------------------*/
+:root {
+    --card-padding-vertical: 40px;
+    --card-padding-horizontal: 40px;
+}
+
+/*----------------------------------------------------------------------------
+----- general styles -----
+----------------------------------------------------------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+}
+
+body {
+    background: rgb(20,30,48);
+    background: linear-gradient(105deg, rgba(20,30,48,1) 0%, rgba(36,59,85,1) 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    color: rgb(40, 40, 40);
+    text-align: center;
+}
+
+.button {
+    width: 100%;
+    border-radius: 2em;
+    background-color: rgb(40, 40, 40);
+    border: none;
+    padding: .65em;
+    text-decoration: none;
+    color: white;
+}
+
+.button, .button i {
+    font-size: .75em;
+}
+
+.section-title {
+    color: white;
+    width: 100%;
+}
+
+/*----- containers -----*/
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.card {
+    background-color: white;
+    width: 100%;
+    border-radius: 10px;
+    padding: var(--card-padding-vertical) var(--card-padding-horizontal);
+    margin-bottom: 75px;
+}
+
+.card span, .card p {
+    font-size: 1.2em;
+}
+
+.container>h1 {
+    font-size: 1.5em;
+    font-weight: 900;
+    margin-bottom: 50px;
+}
+
+.card h2 {
+    margin-bottom: 20px;
+}
+
+.card-title {
+    font-size: 1.75rem;
+    margin-bottom: 30px;;
+    width: calc(100% + calc(var(--card-padding-horizontal) * 2));
+    margin-left: calc(var(--card-padding-horizontal) * -1);
+    border-bottom: 2px solid rgb(220, 220, 220);
+    vertical-align: middle;
+    padding-bottom: 1em;
+    text-align: center;
+    padding-left: var(--card-padding-horizontal);
+    padding-right: var(--card-padding-horizontal);
+}
+
+.full-card-width {
+    width: calc(100% + calc(var(--card-padding-horizontal) * 2));
+    margin-left: calc(var(--card-padding-horizontal) * -1);
+}
+
+/*----- dropdowns -----*/
+.dropdown, input {
+    border: 2px solid rgb(220, 220, 220);
+    background-color: rgb(250, 250, 250);
+    padding: .75em;
+    margin-bottom: 20px;
+    max-width: 100%;
+    text-align: left;
+    border-radius: 10px;
+}
+
+.dropdown-btn {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dropdown-menu {
+    flex-flow: column nowrap;
+    position: relative;
+    left: 0;
+    top: 0;
+    display: flex;
+}
+
+.dropdown-menu a {
+    font-size: .75em;
+    color: rgb(85, 85, 85);
+    text-decoration: none;
+    padding: .25em 0;
+}
+
+.dropdown-menu a:nth-of-type(1) {
+    margin-top: 1em;
+    padding-top: 1em;
+    border-top: 2px solid rgb(220, 220, 220);
+}
+
+.dropdown p, .dropdown i {
+    font-size: .65em;
+}
+
+/*----- forms -----*/
+form input {
+    font-size: .65em;
+}
+
+p.label {
+    margin-bottom: .25em;
+}
+
+.form-title {
+    font-size: 1.25em;
+    padding-bottom: 1em;
+    text-align: center;
+}
+
+/*----------------------------------------------------------------------------
+----- main form -----
+----------------------------------------------------------------------------*/
+.main-form.card {
+    width: 100%;
+    max-width: 620px;
+    text-align: left;
+    margin-bottom: 0;
+}
+
+.main-form.container {
+    flex-flow: column nowrap;
+}
+
+.weight-selection {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-bottom: 1em;
+    max-width: 100%;
+}
+
+.weight-selection #weight-input {
+    flex: 2 2 10%;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    margin: 0;
+    max-height: 150px;
+    max-width: calc(100% - 60px);
+}
+
+.weight-selection #unit-dropdown {
+    flex: 0 0 60px;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    margin: 0;
+    min-width: 60px;
+}
+
+.reps-selection {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-bottom: 1em;
+}
+
+.reps-selection p, .reps-selection input {
+    margin-right: 1em;
+}
+
+/*----------------------------------------------------------------------------
+----- results display -----
+----------------------------------------------------------------------------*/
+.results p span {
+    font-size: .65em;
+    text-align: left;
+}
+
+.results.container {
+    flex-flow: column nowrap;
+    display: none;
+}
+
+.results.container>h1 {
+    font-size: 2em;
+}
+
+.results.card {
+    flex-flow: column nowrap;
+    text-align: center;
+}
+
+.results input {
+    font-size: .65em;
+}
+
+.results-row {
+    background-color: white;
+    display: flex;
+    padding: 10px 0;
+}
+
+.results-header {
+    background-color: rgb(220, 220, 220);
+    display: flex;
+    padding: 10px var(--card-padding-horizontal);
+    margin-bottom: 10px;
+}
+
+#one-rep-maxes-results .results-row .exercise-name, #one-rep-maxes-results .results-header .exercise-name {
+    flex: 1 1 75%;
+}
+
+#one-rep-maxes-results .results-row .exercise-weight-range,#one-rep-maxes-results .results-header .exercise-weight-range {
+    flex: 1 1 25%;
+}
+
+#ideal-ranges-results .results-row .exercise-name, #ideal-ranges-results .results-header .exercise-name {
+    flex: 1 1 55%;
+}
+
+#ideal-ranges-results .results-row .exercise-weight-range,#ideal-ranges-results .results-header .exercise-weight-range {
+    flex: 1 1 45%;
+}
+
+.set-examples {
+    margin-bottom: 25px;
+}
+
+/*----------------------------------------------------------------------------
+----- footer -----
+----------------------------------------------------------------------------*/
+.footer {
+    background-color: white;
+    padding: 50px;
+    border-top: 4px solid lightgray;
+    flex-flow: column nowrap;
+    align-items: center;
+    display: none;
+}
+
+#disclaimer {
+    font-size: .6em;;
+}
+
+#contact, #share-icons, #disclaimer {
+    margin-bottom: 30px;
+}
+
+#contact a {
+    padding: 1em 3em;
+}
+
+#share-icons a {
+    color: white;
+}
+
+#share-icons a img {
+    width: 30px;
+    height: 30px;
+}
+
+/*---------------------------------------------------------------------------- 
+----- animation -----
+----------------------------------------------------------------------------*/
+.dropdown-arrow-rotate {
+    animation: rotate .5s forwards;
+}
+
+/*----- keyframe animations -----*/
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(180deg);
+    }
+}
+
+/*----------------------------------------------------------------------------
+----- breakpoints -----
+----------------------------------------------------------------------------*/
+
+@media only screen and (min-width: 575px) {
+    :root {
+        --card-padding-vertical: 50px;
+        --card-padding-horizontal: 75px;
+    }
+}
+
+@media only screen and (min-width: 820px) {
+    :root {
+        --card-padding-vertical: 40px;
+        --card-padding-horizontal: 40px;
+    }
+
+    .results.container {
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+    }
+
+    .results.card {
+        width: 335px;
+        height: 580px;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    #disclaimer {
+        width: 50%;
+    }
+}

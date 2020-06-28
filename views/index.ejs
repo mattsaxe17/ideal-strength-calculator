@@ -1,0 +1,102 @@
+<%- include('../partials/header.ejs') %>
+
+<div class="main-form container">
+    <div class="card wrapper main-form">
+        <form class="main-form">
+            <h1 class="card-title">Calculate your ideal strength</h1>
+
+            <p class="label">I can</p>
+
+            <div id="exercise-dropdown" class="dropdown" data-selected="">
+                <a class="dropdown-btn" onclick="toggleDropdownMenu('exercise-dropdown')">Exercise</a>
+                <div class="dropdown-menu">
+                    <a href="#">Squat</a>
+                    <a href="#">Deadlift</a>
+                    <a href="#">Power Clean</a>
+                    <a href="#">Bench Press</a>
+                    <a href="#">Overhead Press</a>
+                    <a href="#">Barbell Row</a>
+                </div>
+            </div>
+
+            <div class="weight-selection">
+                <input id="weight-input" type="number" placeholder="input weight">
+
+                <div id="unit-dropdown" class="dropdown" data-selected="">
+                    <a class="dropdown-btn" onclick="toggleDropdownMenu('unit-dropdown')">Units</a>
+                    <div class="dropdown-menu">
+                        <a href="#">Lbs</a>
+                        <a href="#">Kgs</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reps-selection">
+                <p class="label">for</p>
+
+                <input id="reps-input" type="number" value="1" min="1" max="10">
+
+                <p class="label">reps.</p>
+            </div>
+
+            <button id="calculate-btn"  class="button">Calculate <i class="fas fa-long-arrow-alt-right"></i></button>
+        </form>
+    </div>
+</div>
+
+<div class="results container">
+    <h1 class="section-title">Your ideal strength report:</h1>
+
+    <div id="one-rep-maxes-card" class="results card">
+        <h1 class="card-title">Your ideal one rep maxes*</h1>
+
+        <div id="one-rep-maxes-results" class="results dynamic">
+        </div>
+    </div>
+
+    <div id="ideal-ranges-card" class="results card">
+        <h1 class="card-title">Your ideal ranges*</h1>
+
+        <div>
+            <h2>Reps:</h2>
+
+            <input id="output-reps-input" type="number" value="2" min="1" max="10">
+        </div>
+        
+        <div id="ideal-ranges-results" class="results dynamic">
+        </div>
+    </div>
+
+    <div id="set-examples-card" class="results card">
+        <h1 class="card-title">Your ideal set examples*</h1>
+
+        <h2>For:</h2>
+
+        <div id="set-examples-exercise-dropdown" class="dropdown" data-selected="">
+            <a class="dropdown-btn" onclick="toggleDropdownMenu('set-examples-exercise-dropdown')">Exercise</a>
+            <div class="dropdown-menu">
+                <a href="#">Squat</a>
+                <a href="#">Deadlift</a>
+                <a href="#">Power Clean</a>
+                <a href="#">Bench Press</a>
+                <a href="#">Overhead Press</a>
+                <a href="#">Barbell Row</a>
+            </div>
+        </div>
+        
+        <h3>Strength:</h3>
+        <div id="strength-set-examples" class="results dynamic set-examples">
+        </div>
+
+        <h3>Hypertrophy:</h3>
+        <div id="hypertrophy-set-examples" class="results dynamic set-examples">
+        </div>
+
+        <h3>Endurance:</h3>
+        <div id="endurance-set-examples" class="results dynamic set-examples">
+        </div>
+    </div>
+</div>
+
+
+<%- include('../partials/footer.ejs') %>

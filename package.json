@@ -1,0 +1,15 @@
+{
+  "name": "ideal_strength",
+  "version": "1.0.0",
+  "description": "calculate ideal strength",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "author": "Matthew Saxe",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.3",
+    "express": "^4.17.1"
+  }
+}
