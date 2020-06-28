@@ -341,7 +341,7 @@ p.label {
 
     .results.card {
         width: 335px;
-        height: 580px;
+        min-height: 580px;
         margin-right: 10px;
         margin-left: 10px;
     }
