@@ -4,7 +4,7 @@
   "description": "calculate ideal strength",
   "main": "app.js",
   "scripts": {
-    "test": "node app.js"
+    "start": "node app.js"
   },
   "author": "Matthew Saxe",
   "license": "ISC",
