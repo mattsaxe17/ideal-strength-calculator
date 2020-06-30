@@ -185,8 +185,8 @@ p.label {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     margin: 0;
-    max-height: 150px;
     flex-grow: 1;
+    border-right-width: 1px;
 }
 
 .weight-selection #unit-dropdown {
@@ -196,6 +196,7 @@ p.label {
     margin: 0;
     min-width: 45px;
     max-width: 75px;
+    border-left-width: 1px;
 }
 
 .reps-selection {
