@@ -29,6 +29,7 @@ body {
     align-items: center;
     color: rgb(40, 40, 40);
     text-align: center;
+    font-size: 1.5rem;
 }
 
 .button {
@@ -48,6 +49,7 @@ body {
 .section-title {
     color: white;
     width: 100%;
+    font-size: .65em;
 }
 
 /*----- containers -----*/
@@ -61,15 +63,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px;
+    padding: .75em;
 }
 
 .card {
     background-color: white;
     width: 100%;
-    border-radius: 10px;
+    border-radius: .35em;
     padding: var(--card-padding-vertical) var(--card-padding-horizontal);
-    margin-bottom: 75px;
+    margin-bottom: 3em;
 }
 
 .card span, .card p {
@@ -79,7 +81,7 @@ body {
 .container>h1 {
     font-size: 1.5em;
     font-weight: 900;
-    margin-bottom: 50px;
+    margin-bottom: 1.5em;
 }
 
 .card h2 {
@@ -87,7 +89,7 @@ body {
 }
 
 .card-title {
-    font-size: 1.75rem;
+    font-size: 1.5em;
     margin-bottom: 30px;;
     width: calc(100% + calc(var(--card-padding-horizontal) * 2));
     margin-left: calc(var(--card-padding-horizontal) * -1);
@@ -165,9 +167,7 @@ p.label {
 ----------------------------------------------------------------------------*/
 .main-form.card {
     width: 100%;
-    max-width: 620px;
     text-align: left;
-    margin-bottom: 0;
 }
 
 .main-form.container {
@@ -178,24 +178,24 @@ p.label {
     display: flex;
     flex-flow: row nowrap;
     margin-bottom: 1em;
-    max-width: 100%;
 }
 
 .weight-selection #weight-input {
-    flex: 2 2 10%;
+    width: 70%;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     margin: 0;
     max-height: 150px;
-    max-width: calc(100% - 60px);
+    flex-grow: 1;
 }
 
 .weight-selection #unit-dropdown {
-    flex: 0 0 60px;
+    width: 30%;
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
     margin: 0;
-    min-width: 60px;
+    min-width: 45px;
+    max-width: 75px;
 }
 
 .reps-selection {
@@ -219,10 +219,6 @@ p.label {
 .results.container {
     flex-flow: column nowrap;
     display: none;
-}
-
-.results.container>h1 {
-    font-size: 2em;
 }
 
 .results.card {
@@ -280,7 +276,7 @@ p.label {
 }
 
 #disclaimer {
-    font-size: .6em;;
+    font-size: .5em;
 }
 
 #contact, #share-icons, #disclaimer {
@@ -289,6 +285,7 @@ p.label {
 
 #contact a {
     padding: 1em 3em;
+    font-size: .5em;
 }
 
 #share-icons a {
@@ -321,32 +318,46 @@ p.label {
 ----- breakpoints -----
 ----------------------------------------------------------------------------*/
 
-@media only screen and (min-width: 575px) {
-    :root {
-        --card-padding-vertical: 50px;
-        --card-padding-horizontal: 75px;
+/* Small devices (landscape phones, 576px and up) */
+@media screen and (min-width: 576px) {
+    form.main-form {
+        max-width: 560px;
+        margin: 0 auto;
     }
 }
 
-@media only screen and (min-width: 820px) {
-    :root {
-        --card-padding-vertical: 40px;
-        --card-padding-horizontal: 40px;
-    }
-
-    .results.container {
-        flex-flow: row wrap;
-        justify-content: space-evenly;
-    }
-
-    .results.card {
-        width: 335px;
-        min-height: 580px;
-        margin-right: 10px;
-        margin-left: 10px;
+/* Medium devices (tablets, 770px and up) */
+@media (min-width: 770px) {
+    .main-form.card {
+        margin-top: 30px;
+        width: 717px;
     }
 
     #disclaimer {
         width: 50%;
     }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .results.container {
+        flex-flow: row wrap;
+    }
+    
+    .results.card {
+        font-size: .8em;
+        width: 350px;
+        min-height: 585px;
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+
+    .results.card div h2 {
+        font-size: .8em;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    /* nothing for now (; */
 }
